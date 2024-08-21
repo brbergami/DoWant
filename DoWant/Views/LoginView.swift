@@ -8,47 +8,47 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = LoginViewModel()
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView {
             VStack {
-                HeaderView()
+                HeaderView(subtitle: "Login", position: "left", backgroundAngle: -15)
                 
                 Form {
-                    TextField("Email", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .listRowSeparator(.hidden)
-                    SecureField("Password", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .listRowSeparator(.hidden)
-                    Button {
-                        // Login
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(Color(
-                                    red: 187/255,
-                                    green: 223/255,
-                                    blue: 0/255
-                                ))
-                            Text("Login")
-                                .foregroundColor(Color.white)
-                                .bold()
-                        }
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
                     }
+                    TextField("Email", text: $viewModel.email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .listRowSeparator(.hidden)
+                        .autocapitalization(.none)
+                        .autocorrectionDisabled()
+                    SecureField("Password", text: $viewModel.password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .listRowSeparator(.hidden)
+                    SimpleButton(text: "Login",
+                                 color: Color(red: 187/255,
+                                              green: 223/255,
+                                              blue: 0/255),
+                                 callback: viewModel.login
+                    )
                 }
                 .scrollContentBackground(.hidden)
-                .offset(y: -80)
+                .offset(y: -70)
                 
-                VStack {
-                    NavigationLink("Create an account",
-                                   destination: RegisterView())
-                }
-                .padding(.bottom, 20)
+                NavigationLink("Create an account",
+                               destination: RegisterView())
+//                    .offset(y: -10)
+                    .padding(.bottom, 20)
                 
-                Spacer()
+                Text("Made with love by Bruno Bergami")
+                    .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                    .font(.system(size: 12))
+                    .bold()
+                    .padding(.bottom, 20)
             }
         }
     }
