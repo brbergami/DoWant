@@ -20,6 +20,7 @@ struct HeaderView: View {
                                        blue: 0/255))
                 .rotationEffect(Angle(degrees: backgroundAngle))
                 .offset(y: -30)
+                .shadow(color: .black, radius: 10, x: 0, y: -10)
             VStack {
                 Text("DoWant!")
                     .foregroundColor(Color.white)

@@ -21,18 +21,21 @@ struct LoginView: View {
                         Text(viewModel.errorMessage)
                             .foregroundColor(.red)
                     }
+                    
                     TextField("Email", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .listRowSeparator(.hidden)
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
+                    
                     SecureField("Password", text: $viewModel.password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .listRowSeparator(.hidden)
+                        .autocapitalization(.none)
+                        .autocorrectionDisabled()
+                        .padding(.bottom)
+                    
                     SimpleButton(text: "Login",
-                                 color: Color(red: 187/255,
-                                              green: 223/255,
-                                              blue: 0/255),
                                  callback: viewModel.login
                     )
                 }

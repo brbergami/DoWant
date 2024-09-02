@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C132EF9B2C782FB60022C658 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = C132EF9A2C782FB60022C658 /* SwiftSoup */; };
 		C1EBB4C42C72349600E259C1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C1EBB4C32C72349600E259C1 /* FirebaseAuth */; };
 		C1EBB4C62C72349600E259C1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C1EBB4C52C72349600E259C1 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 			files = (
 				C1EBB4C42C72349600E259C1 /* FirebaseAuth in Frameworks */,
 				C1EBB4C62C72349600E259C1 /* FirebaseFirestore in Frameworks */,
+				C132EF9B2C782FB60022C658 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,7 @@
 			packageProductDependencies = (
 				C1EBB4C32C72349600E259C1 /* FirebaseAuth */,
 				C1EBB4C52C72349600E259C1 /* FirebaseFirestore */,
+				C132EF9A2C782FB60022C658 /* SwiftSoup */,
 			);
 			productName = DoWant;
 			productReference = C1D954782C71777000FCCA28 /* DoWant.app */;
@@ -206,6 +209,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C1EBB4C22C72349600E259C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C132EF992C782FB60022C658 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C1D954792C71777000FCCA28 /* Products */;
@@ -415,6 +419,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +449,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -572,6 +578,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C132EF992C782FB60022C658 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.5;
+			};
+		};
 		C1EBB4C22C72349600E259C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -583,6 +597,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C132EF9A2C782FB60022C658 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C132EF992C782FB60022C658 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		C1EBB4C32C72349600E259C1 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1EBB4C22C72349600E259C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
