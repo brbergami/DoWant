@@ -11,8 +11,12 @@ DoWant! is a SwiftUI app that helps you save, organize, and track your purchase 
 * **Cross-device sync** of wishlists via Firebase
 * **Secure authentication** with Firebase
 
-### ⠀Some raw screenshots:
-[TBA]
+### Some raw screenshots:
+![Login](https://github.com/brbergami/ux/blob/main/ux/dowant/screenshots/1.png?raw=true)
+
+![Register](https://github.com/brbergami/ux/blob/main/ux/dowant/screenshots/2.png?raw=true)
+
+![Image items](https://github.com/brbergami/ux/blob/main/ux/dowant/screenshots/3.png?raw=true)
 
 ### Architecture
 DoWant! follows a clean architecture with the MVVM design pattern. Key components:
